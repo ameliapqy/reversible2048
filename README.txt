@@ -1,15 +1,7 @@
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
-CIS 120 Game Project README
-PennKey: _pqy___
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
 
-===================
-=: Core Concepts :=
-===================
-
-- List the four core concepts, the features they implement, and why each feature
-  is an appropriate use of the concept. Incorporate the feedback you got after
-  submitting your proposal.
+=========================
+=: Plan :=
+=========================
 
   1. A standard 2048 board is 4 by 4. To represent the board, I will use a 2D array of integers that stores the current state of each square, which is 
   the value of the square displayed, and 0 will represent a blank square. 
@@ -32,27 +24,24 @@ only the first two values are combined.
 
 
 =========================
-=: Your Implementation :=
+=: Implementation :=
 =========================
 
-- Provide an overview of each of the classes in your code, and what their
-  function is in the overall game.
+##classes and their functions:
 Tiles: the tile class store the position, color, and font of each tile on the board.
 It's function is to let each tiles draw on GUI so users could see it 
 Board: This is the main class that hold the game panel. It has a 4 by 4 array to hold the tiles, 
 an 2D int array to hold the scores, and a linked list to hold the moves. 
 Game: main state of the game that has a specifies the frame and widgets of the GUI. It initiates the board, put buttons
 to the panel such as undo, reset, read, and save. 
-- Were there any significant stumbling blocks while you were implementing your
-  game (related to your design, or otherwise)?
+##difficulties
 I stucked a long time on Algorithm for combining the tiles because there are so many
 cases, and it's hard to have an algorithm for every none empty tile to move left. It's also hard to test the 
 program because I have to write new methods for accessing and setting the values of each tile. 
 It's also hard to keep track of moves since it need to be updated after each move, so I can't just create
 a label in the game class. Instead, I let the board constructor take in the label so it
 could be repainted after each move. 
-- Evaluate your design. Is there a good separation of functionality? How well is
-  private state encapsulated? What would you refactor, if given the chance?
+##evaluation
 It's encapsulated well by having a seperate Tile, Board, and Game class, so one can't 
 modify a board or tile's state directly in the game class. Tile and Board class both have private variables, which 
 encapsulate the state of the object nicely, and could only be modified by method inside the class. If I have the chance,
@@ -63,7 +52,6 @@ I might only hold the value in the tile class instead of having a new 2D int arr
 =: External Resources :=
 ========================
 
-- Cite any external resources (libraries, images, tutorials, etc.) that you may
-  have used while implementing your game.
+  Java Swing Library
   JOptionPane
   The game 2048(for rules)
