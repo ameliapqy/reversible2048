@@ -1,10 +1,9 @@
-##Plan
+## Plan
 
   1. A standard 2048 board is 4 by 4. To represent the board, I will use a 2D array of integers that stores the current state of each square, which is 
   the value of the square displayed, and 0 will represent a blank square. 
   When the game starts,  all elements in the array will be 0, representing a blank board, except a 2 will be generated at a random position on the board.
   
-
   2. I will use a linked list to store each of the moves that occur during a game, since the order matter and I only need to access or remove the head. 
   It lets user undo a move, which remove the last move from of the list. The list will store an 2D array of values representing the current value of 
   each tile on the board for each move. 
@@ -19,7 +18,7 @@ I will also test the case when four values in a row is the same, moving left wou
   
 
 
-##Implementation
+## Implementation
 
 ### classes and their functions:
 Tiles: the tile class store the position, color, and font of each tile on the board.
